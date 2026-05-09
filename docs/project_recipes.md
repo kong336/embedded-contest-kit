@@ -218,6 +218,26 @@ This page tells you which modules to copy first for common contest-style project
 - `examples/command_table_demo.c`
 - `stm32_hal/examples/stm32_uart_packet_hal.c`
 
+## TI DriverLib bringup starter
+
+### Good reference docs
+
+- `docs/ti_board_reference.md`
+- `docs/ti_driverlib_basics.md`
+- `docs/ti_ecosystem_notes.md`
+
+### Ready-to-copy starter helpers
+
+- `ti_driverlib/mspm0/contest_ti_mspm0_driverlib.h`
+- `ti_driverlib/msp430/contest_ti_msp430_driverlib.h`
+- `ti_driverlib/c2000/contest_ti_c2000_driverlib.h`
+- `ti_driverlib/tm4c/contest_ti_tm4c_driverlib.h`
+
+### What to keep in mind
+
+- keep board clocks, pinmux, and peripheral init in the TI SDK project or SysConfig output
+- use the helpers here as a thin reusable layer above the official TI API
+
 ## OLED menu
 
 ### Portable modules

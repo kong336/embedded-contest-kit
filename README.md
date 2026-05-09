@@ -23,6 +23,7 @@ This repository is meant for the very common situation of:
 - `examples/`: small portable examples that show how modules fit together
 - `docs/`: principle notes, STM32 usage notes, TI ecosystem notes, upper-computer notes, and project recipe suggestions
 - `host_tools/`: Python serial helpers for packet debugging and line-based telemetry logging
+- `ti_driverlib/`: TI family-specific DriverLib or TivaWare starter helpers for MSPM0, MSP430, C2000, and TM4C
 - `tools/`: Windows helper scripts for compiler setup and portable-build verification
 
 ## Included module groups
@@ -122,6 +123,8 @@ For PC-side serial tools, see [host_tools/README.md](host_tools/README.md).
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
 - [docs/upper_computer_guide.md](docs/upper_computer_guide.md)
 - [docs/ti_ecosystem_notes.md](docs/ti_ecosystem_notes.md)
+- [docs/ti_board_reference.md](docs/ti_board_reference.md)
+- [docs/ti_driverlib_basics.md](docs/ti_driverlib_basics.md)
 - [docs/bringup_checklist.md](docs/bringup_checklist.md)
 - [docs/tuning_playbook.md](docs/tuning_playbook.md)
 

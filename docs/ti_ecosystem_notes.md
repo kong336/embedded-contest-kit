@@ -184,3 +184,9 @@ That is exactly why this repository keeps the reusable pieces in `generic_c/`.
 - CCS Terminal View doc: <https://software-dl.ti.com/ccs/esd/documents/ccs_terminal_view.html>
 - GUI Composer guide: <https://software-dl.ti.com/msp430/esd/MSPM0-SDK/latest/docs/english/middleware/gui_composer/doc_guide/doc_guide-srcs/Users_Guide.html>
 - UniFlash: <https://www.ti.com/tool/UNIFLASH>
+
+## Repository follow-up pages
+
+- `docs/ti_board_reference.md`
+- `docs/ti_driverlib_basics.md`
+- `ti_driverlib/README.md`

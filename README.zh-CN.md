@@ -17,6 +17,7 @@
 - `examples/`：通用示例，便于理解模块组合方式
 - `docs/`：原理说明、项目配方、STM32 使用建议、TI 生态说明、上位机说明、调参和上电清单
 - `host_tools/`：Python 串口工具，便于包协议调试和文本遥测记录
+- `ti_driverlib/`：按 MSPM0、MSP430、C2000、TM4C 分类整理的 TI DriverLib 或 TivaWare 基础函数模板
 - `tools/`：Windows 下的编译器辅助脚本和自检脚本
 
 ## 已包含的核心能力
@@ -112,6 +113,8 @@ PC 端串口小工具见 [host_tools/README.md](host_tools/README.md)。
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
 - [docs/upper_computer_guide.md](docs/upper_computer_guide.md)
 - [docs/ti_ecosystem_notes.md](docs/ti_ecosystem_notes.md)
+- [docs/ti_board_reference.md](docs/ti_board_reference.md)
+- [docs/ti_driverlib_basics.md](docs/ti_driverlib_basics.md)
 - [docs/bringup_checklist.md](docs/bringup_checklist.md)
 - [docs/tuning_playbook.md](docs/tuning_playbook.md)
 
