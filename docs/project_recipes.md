@@ -178,9 +178,45 @@ This page tells you which modules to copy first for common contest-style project
 - `contest_packet`
 - `contest_ring_buffer`
 
+### STM32 HAL modules
+
+- `contest_hal_uart_packet`
+
+### PC-side helpers
+
+- `host_tools/packet_console.py`
+
 ### Example entry point
 
 - `examples/command_table_demo.c`
+
+### HAL example entry points
+
+- `stm32_hal/examples/stm32_uart_packet_hal.c`
+
+## Packet-based upper-computer link
+
+### Portable modules
+
+- `contest_ring_buffer`
+- `contest_packet`
+- `contest_crc16`
+- `contest_command_table`
+
+### STM32 HAL modules
+
+- `contest_hal_uart_packet`
+
+### PC-side helpers
+
+- `host_tools/packet_console.py`
+- `host_tools/serial_line_logger.py`
+
+### Example entry points
+
+- `examples/uart_packet_demo.c`
+- `examples/command_table_demo.c`
+- `stm32_hal/examples/stm32_uart_packet_hal.c`
 
 ## OLED menu
 

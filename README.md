@@ -8,7 +8,7 @@
 
 ![Embedded Contest Kit cover](assets/repo-cover.png)
 
-A competition-oriented embedded firmware starter pack focused on reusable C modules, STM32 HAL adapters, and copy-ready examples.
+A competition-oriented embedded firmware starter pack focused on reusable C modules, STM32 HAL adapters, copy-ready examples, and practical PC-side host tools.
 
 This repository is meant for the very common situation of:
 
@@ -21,7 +21,8 @@ This repository is meant for the very common situation of:
 - `generic_c/`: portable C modules for control, filtering, scheduling, state flow, packets, and utility logic
 - `stm32_hal/`: STM32 HAL-facing wrappers for ADC, PWM motors, UART packets, buttons, buzzer, servo, and encoder timers
 - `examples/`: small portable examples that show how modules fit together
-- `docs/`: principle notes, STM32 usage notes, and project recipe suggestions
+- `docs/`: principle notes, STM32 usage notes, TI ecosystem notes, upper-computer notes, and project recipe suggestions
+- `host_tools/`: Python serial helpers for packet debugging and line-based telemetry logging
 - `tools/`: Windows helper scripts for compiler setup and portable-build verification
 
 ## Included module groups
@@ -32,6 +33,7 @@ This repository is meant for the very common situation of:
 - `contest_incremental_pi`
 - `contest_moving_average`
 - `contest_low_pass`
+- `contest_median_filter`
 - `contest_complementary_angle`
 - `contest_value_tuner`
 - `contest_ramp`
@@ -87,6 +89,7 @@ This repository is meant for the very common situation of:
 - Balance car starter: `contest_complementary_angle`, `contest_pid`, `contest_incremental_pi`, `contest_periodic_task`
 - Parameter tuning page: `contest_menu`, `contest_value_tuner`, `contest_hal_button`
 - Status LED feedback: `contest_led_pattern`, `contest_hal_status_led`
+- Packet-based upper computer: `contest_ring_buffer`, `contest_packet`, `contest_crc16`, `contest_command_table`, `contest_hal_uart_packet`
 
 More recipe-style module bundles are listed in [docs/project_recipes.md](docs/project_recipes.md).
 
@@ -110,11 +113,15 @@ powershell -ExecutionPolicy Bypass -File .\tools\verify_portable_build.ps1 -Comp
 
 Toolchain notes are in [docs/compiler_notes.md](docs/compiler_notes.md).
 
+For PC-side serial tools, see [host_tools/README.md](host_tools/README.md).
+
 ## Recommended reading
 
 - [docs/module_principles.md](docs/module_principles.md)
 - [docs/project_recipes.md](docs/project_recipes.md)
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
+- [docs/upper_computer_guide.md](docs/upper_computer_guide.md)
+- [docs/ti_ecosystem_notes.md](docs/ti_ecosystem_notes.md)
 - [docs/bringup_checklist.md](docs/bringup_checklist.md)
 - [docs/tuning_playbook.md](docs/tuning_playbook.md)
 

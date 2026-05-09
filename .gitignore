@@ -11,6 +11,8 @@ out/
 *.log
 .vs/
 .vscode/
+__pycache__/
+*.pyc
 Thumbs.db
 *.user
 *.VC.db

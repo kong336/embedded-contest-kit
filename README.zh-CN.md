@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-一个面向电赛、嵌入式练习和小车控制题的基础代码仓库，重点放在可复用 C 模块、STM32 HAL 适配层，以及能直接照着改的示例。
+一个面向电赛、嵌入式练习和小车控制题的基础代码仓库，重点放在可复用 C 模块、STM32 HAL 适配层、能直接照着改的示例，以及常用的 PC 端上位机小工具。
 
 ## 这个仓库适合什么场景
 
@@ -15,7 +15,8 @@
 - `generic_c/`：可移植的通用 C 模块
 - `stm32_hal/`：面向 STM32 HAL 的适配层和示例
 - `examples/`：通用示例，便于理解模块组合方式
-- `docs/`：原理说明、项目配方、STM32 使用建议、调参和上电清单
+- `docs/`：原理说明、项目配方、STM32 使用建议、TI 生态说明、上位机说明、调参和上电清单
+- `host_tools/`：Python 串口工具，便于包协议调试和文本遥测记录
 - `tools/`：Windows 下的编译器辅助脚本和自检脚本
 
 ## 已包含的核心能力
@@ -26,6 +27,7 @@
 - `contest_incremental_pi`
 - `contest_moving_average`
 - `contest_low_pass`
+- `contest_median_filter`
 - `contest_complementary_angle`
 - `contest_value_tuner`
 - `contest_ramp`
@@ -79,6 +81,7 @@
 - 超声测距：`contest_ultrasonic` + `contest_low_pass`
 - 平衡车骨架：`contest_complementary_angle` + `contest_pid` + `contest_incremental_pi` + `contest_periodic_task`
 - 状态灯提示：`contest_led_pattern` + `contest_hal_status_led`
+- 上位机包协议链路：`contest_ring_buffer` + `contest_packet` + `contest_crc16` + `contest_command_table` + `contest_hal_uart_packet`
 
 更完整的组合建议在 [docs/project_recipes.md](docs/project_recipes.md)。
 
@@ -100,11 +103,15 @@ powershell -ExecutionPolicy Bypass -File .\tools\verify_portable_build.ps1 -Comp
 powershell -ExecutionPolicy Bypass -File .\tools\verify_portable_build.ps1 -Compiler cl
 ```
 
+PC 端串口小工具见 [host_tools/README.md](host_tools/README.md)。
+
 ## 推荐先读
 
 - [docs/module_principles.md](docs/module_principles.md)
 - [docs/project_recipes.md](docs/project_recipes.md)
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
+- [docs/upper_computer_guide.md](docs/upper_computer_guide.md)
+- [docs/ti_ecosystem_notes.md](docs/ti_ecosystem_notes.md)
 - [docs/bringup_checklist.md](docs/bringup_checklist.md)
 - [docs/tuning_playbook.md](docs/tuning_playbook.md)
 
