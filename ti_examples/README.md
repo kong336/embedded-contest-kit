@@ -16,8 +16,9 @@ This folder holds board-level TI starter examples.
 ## Current examples
 
 - `msp430fr2355_register_level/`
+- `mspm0g3507_register_level/`
 
-That example was chosen first because this machine already has:
+`msp430fr2355_register_level/` was chosen first because this machine already has:
 
 - `CCS` installed
 - `cl430` available
@@ -25,3 +26,9 @@ That example was chosen first because this machine already has:
 - linker command files available
 
 So it is the cleanest TI line to turn into a real local starter right now.
+
+`mspm0g3507_register_level/` now extends that idea to a current `MSPM0` board:
+
+- it uses the local `tiarmclang` toolchain
+- it follows the local LaunchPad board metadata for `PA10/PA11` backchannel UART routing
+- it keeps the code register-level because the full `MSPM0-SDK` tree is not yet present locally

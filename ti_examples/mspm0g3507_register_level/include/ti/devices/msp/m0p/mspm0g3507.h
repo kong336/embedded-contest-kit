@@ -1,0 +1,56 @@
+#ifndef __MSPM0G3507_H__
+#define __MSPM0G3507_H__
+
+#include <stdint.h>
+
+#define __I volatile const
+#define __O volatile
+#define __IO volatile
+#define __NO_RETURN __attribute__((noreturn))
+
+#define CONTEST_MSPM0_GPIOA_BASE 0x400A0000u
+#define CONTEST_MSPM0_GPIOB_BASE 0x400A2000u
+#define CONTEST_MSPM0_IOMUX_BASE 0x40428000u
+#define CONTEST_MSPM0_UART0_BASE 0x40108000u
+
+#define CONTEST_MSPM0_GPRCM_PWREN_OFFSET 0x800u
+#define CONTEST_MSPM0_GPRCM_ENABLE 0x1u
+
+#define CONTEST_MSPM0_GPIO_DOUTSET31_0_OFFSET 0x1290u
+#define CONTEST_MSPM0_GPIO_DOUTCLR31_0_OFFSET 0x12A0u
+#define CONTEST_MSPM0_GPIO_DOESET31_0_OFFSET 0x12D0u
+
+#define CONTEST_MSPM0_IOMUX_PC (1u << 7)
+#define CONTEST_MSPM0_IOMUX_INENA (1u << 18)
+#define CONTEST_MSPM0_IOMUX_PF_MASK 0x3Fu
+#define CONTEST_MSPM0_IOMUX_PINCM(index) \
+    (CONTEST_MSPM0_IOMUX_BASE + ((uint32_t)(index) * 0x4u))
+
+#define CONTEST_MSPM0_UART_CLKDIV_OFFSET 0x1000u
+#define CONTEST_MSPM0_UART_CLKSEL_OFFSET 0x1008u
+#define CONTEST_MSPM0_UART_CTL0_OFFSET 0x1100u
+#define CONTEST_MSPM0_UART_LCRH_OFFSET 0x1104u
+#define CONTEST_MSPM0_UART_STAT_OFFSET 0x1108u
+#define CONTEST_MSPM0_UART_IBRD_OFFSET 0x1110u
+#define CONTEST_MSPM0_UART_FBRD_OFFSET 0x1114u
+#define CONTEST_MSPM0_UART_TXDATA_OFFSET 0x1120u
+
+#define CONTEST_MSPM0_UART_CLKSEL_BUSCLK_SEL (1u << 3)
+#define CONTEST_MSPM0_UART_CTL0_ENABLE (1u << 0)
+#define CONTEST_MSPM0_UART_CTL0_RXE (1u << 3)
+#define CONTEST_MSPM0_UART_CTL0_TXE (1u << 4)
+#define CONTEST_MSPM0_UART_LCRH_WLEN_8 (0x3u << 4)
+#define CONTEST_MSPM0_UART_STAT_BUSY (1u << 0)
+#define CONTEST_MSPM0_UART_STAT_TXFF (1u << 7)
+
+static inline void contest_mspm0_write32(uint32_t address, uint32_t value)
+{
+    *(__IO uint32_t *)address = value;
+}
+
+static inline uint32_t contest_mspm0_read32(uint32_t address)
+{
+    return *(__I uint32_t *)address;
+}
+
+#endif
