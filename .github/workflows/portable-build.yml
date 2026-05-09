@@ -1,0 +1,59 @@
+name: portable-build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  ubuntu-gcc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify portable build with gcc
+        run: |
+          mkdir -p build/gcc
+          for file in generic_c/src/*.c examples/*.c; do
+            out="build/gcc/$(basename "${file%.c}.o")"
+            gcc -std=c11 -Wall -Wextra -Werror -I generic_c/include -c "$file" -o "$out"
+          done
+
+  ubuntu-clang:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify portable build with clang
+        run: |
+          mkdir -p build/clang
+          for file in generic_c/src/*.c examples/*.c; do
+            out="build/clang/$(basename "${file%.c}.o")"
+            clang -std=c11 -Wall -Wextra -Werror -I generic_c/include -c "$file" -o "$out"
+          done
+
+  windows-msvc:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify portable build with MSVC cl
+        shell: pwsh
+        run: |
+          $vswhere = "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe"
+          $vsDevCmd = & $vswhere -latest -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -find Common7\Tools\VsDevCmd.bat
+          if (-not $vsDevCmd) {
+            throw "VsDevCmd.bat not found"
+          }
+
+          New-Item -ItemType Directory -Force -Path build\cl | Out-Null
+          $files = @(
+            Get-ChildItem generic_c\src\*.c | ForEach-Object { $_.FullName }
+            Get-ChildItem examples\*.c | ForEach-Object { $_.FullName }
+          )
+
+          foreach ($file in $files) {
+            $out = Join-Path (Resolve-Path build\cl) (([System.IO.Path]::GetFileNameWithoutExtension($file)) + ".obj")
+            $cmd = 'call "' + $vsDevCmd + '" -arch=x64 -host_arch=x64 >nul && cl /nologo /W4 /WX /I "generic_c\include" /c "' + $file + '" /Fo"' + $out + '"'
+            cmd /c $cmd
+            if ($LASTEXITCODE -ne 0) {
+              exit $LASTEXITCODE
+            }
+          }

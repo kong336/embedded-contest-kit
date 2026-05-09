@@ -60,6 +60,20 @@ Keeping them separate helps a lot in competitions because you can copy only the 
 2. generic servo map converts desired angle into compare value
 3. HAL GPIO buzzer wrapper plays timed success or warning patterns
 
+### OLED menu and command control
+
+1. HAL buttons generate clean click events
+2. generic menu logic updates cursor and visible rows
+3. your OLED driver only handles drawing
+4. serial command tables keep packet parsing and command actions separated
+
+### Ultrasonic and balancing control
+
+1. timer capture or board-specific driver measures echo pulse width
+2. generic ultrasonic helper converts echo time into distance
+3. IMU driver provides gyro plus accelerometer inputs
+4. generic complementary filter and control loops handle the reusable math
+
 ## What is still board-specific
 
 - exact ADC channel ordering
@@ -69,6 +83,9 @@ Keeping them separate helps a lot in competitions because you can copy only the 
 - button active level and pull-up or pull-down wiring
 - servo timer period and compare range
 - buzzer wiring polarity and whether it is active or passive
+- OLED driver implementation and font tables
+- ultrasonic trigger and echo capture implementation
+- IMU register driver and calibration
 - interrupt callback registration
 - CubeMX-generated initialization
 

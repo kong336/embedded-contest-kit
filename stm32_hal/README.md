@@ -14,6 +14,12 @@ This folder adapts the generic contest kit to STM32 HAL-style projects.
 - `include/contest_hal_servo.h`: PWM servo helper with angle mapping
 - `examples/`: STM32 HAL-flavored example files
 
+## Extra example templates
+
+- `examples/stm32_menu_oled_hal.c`: button-driven menu skeleton for SSD1306 or SH1106 style displays
+- `examples/stm32_ultrasonic_hal.c`: HC-SR04 style post-processing template after echo capture
+- `examples/stm32_balance_car_hal.c`: balance-car control structure example
+
 ## Design goal
 
 The goal here is not to replace STM32CubeMX. The goal is to give you a clean reusable layer after CubeMX has already created handles such as:

@@ -118,6 +118,18 @@ Model buzzer feedback as a timed on/off sequence so your application logic only 
 - error warning
 - mode-change feedback
 
+## contest_menu
+
+### Principle
+
+Keep menu cursor movement, visible-window scrolling, and selected item state inside one small object instead of scattering them across OLED drawing code.
+
+### When to use
+
+- OLED menu pages
+- parameter tuning pages
+- quick mode selection on small screens
+
 ## contest_ramp
 
 ### Principle
@@ -224,6 +236,30 @@ Map a desired mechanical angle onto the timer compare range that your servo expe
 - steering servo
 - grabber or small arm positioning
 
+## contest_ultrasonic
+
+### Principle
+
+Convert echo pulse width into one-way distance using sound speed, then reject values that are outside the sensor's practical range.
+
+### When to use
+
+- obstacle avoidance
+- simple front-distance detection
+- near-field wall tracking
+
+## contest_command_table
+
+### Principle
+
+Map command IDs to handler functions with a table so packet parsing and application actions stay cleanly separated.
+
+### When to use
+
+- upper-computer serial command control
+- MCU-to-MCU command packets
+- debug shells and parameter updates
+
 ## contest_packet
 
 ### Principle
@@ -301,3 +337,17 @@ Typical button-menu stack:
 2. button helper debounces it
 3. click or long-press event is generated
 4. state machine changes current mode
+
+Typical OLED menu stack:
+
+1. buttons generate click events
+2. menu helper updates cursor and visible window
+3. OLED driver renders the visible labels
+4. application logic handles the selected item
+
+Typical balance-car stack:
+
+1. IMU gives gyro rate and accelerometer angle
+2. complementary filter fuses them into one stable body angle
+3. speed loop adjusts the desired balance point
+4. angle loop drives motor PWM

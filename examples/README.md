@@ -10,3 +10,7 @@ These examples are intentionally incomplete at the hardware layer. They show how
 - `imu_angle_demo.c`: complementary angle fusion from gyro rate plus accelerometer angle
 - `buzzer_pattern_demo.c`: timed beep pattern state logic
 - `servo_scan_demo.c`: servo angle smoothing and compare-value mapping
+- `command_table_demo.c`: command ID dispatch table for upper-computer or board-to-board control
+- `menu_oled_demo.c`: generic menu state for a small OLED UI
+- `ultrasonic_demo.c`: HC-SR04 style echo-time to distance conversion with filtering
+- `balance_car_demo.c`: balance-car style angle fusion plus speed and angle loop skeleton

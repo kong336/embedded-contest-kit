@@ -78,6 +78,31 @@ This page tells you which modules to copy first for common contest-style project
 
 - `examples/imu_angle_demo.c`
 
+## Balance-car starter
+
+### Portable modules
+
+- `contest_complementary_angle`
+- `contest_pid`
+- `contest_incremental_pi`
+- `contest_periodic_task`
+
+### STM32 HAL modules
+
+- `contest_hal_encoder_timer`
+- `contest_hal_motor`
+
+### What you still need
+
+- your real IMU driver
+- fall-detection and motor cutoff logic
+- a fixed control tick
+
+### Example entry points
+
+- `examples/balance_car_demo.c`
+- `stm32_hal/examples/stm32_balance_car_hal.c`
+
 ## Servo scan or camera pan
 
 ### Portable modules
@@ -110,3 +135,46 @@ This page tells you which modules to copy first for common contest-style project
 
 - `examples/uart_packet_demo.c`
 - `stm32_hal/examples/stm32_uart_packet_hal.c`
+
+## Upper-computer command table
+
+### Portable modules
+
+- `contest_command_table`
+- `contest_packet`
+- `contest_ring_buffer`
+
+### Example entry point
+
+- `examples/command_table_demo.c`
+
+## OLED menu
+
+### Portable modules
+
+- `contest_menu`
+- `contest_button`
+- `contest_state_machine`
+
+### STM32 HAL examples
+
+- `stm32_hal/examples/stm32_menu_oled_hal.c`
+
+### Example entry point
+
+- `examples/menu_oled_demo.c`
+
+## Ultrasonic distance detection
+
+### Portable modules
+
+- `contest_ultrasonic`
+- `contest_low_pass`
+
+### STM32 HAL example
+
+- `stm32_hal/examples/stm32_ultrasonic_hal.c`
+
+### Example entry point
+
+- `examples/ultrasonic_demo.c`
