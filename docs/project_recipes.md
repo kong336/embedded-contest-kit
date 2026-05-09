@@ -238,6 +238,26 @@ This page tells you which modules to copy first for common contest-style project
 - keep board clocks, pinmux, and peripheral init in the TI SDK project or SysConfig output
 - use the helpers here as a thin reusable layer above the official TI API
 
+## MSP430FR2355 register-level starter
+
+### Ready-to-run folder
+
+- `ti_examples/msp430fr2355_register_level/README.md`
+
+### Included examples
+
+- `ti_examples/msp430fr2355_register_level/src/blink_led.c`
+- `ti_examples/msp430fr2355_register_level/src/uart_hello.c`
+
+### Build helper
+
+- `ti_examples/msp430fr2355_register_level/tools/build_example.ps1`
+
+### Why this one comes first
+
+- this machine already has working `CCS`, `cl430`, device headers, and linker command files for `MSP430FR2355`
+- it is the fastest TI board line to turn into a real local starter before filling in other SDK-based families
+
 ## OLED menu
 
 ### Portable modules
