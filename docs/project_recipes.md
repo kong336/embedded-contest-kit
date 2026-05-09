@@ -41,6 +41,23 @@ This page tells you which modules to copy first for common contest-style project
 - `examples/speed_loop_demo.c`
 - `stm32_hal/examples/stm32_speed_loop_hal.c`
 
+## Differential-drive car
+
+### Portable modules
+
+- `contest_diff_drive`
+- `contest_ramp`
+
+### STM32 HAL modules
+
+- `contest_hal_diff_drive`
+- `contest_hal_motor`
+
+### Example entry points
+
+- `examples/diff_drive_demo.c`
+- `stm32_hal/examples/stm32_diff_drive_hal.c`
+
 ## Button plus menu or mode switching
 
 ### Portable modules
@@ -59,6 +76,23 @@ This page tells you which modules to copy first for common contest-style project
 - `examples/button_menu_demo.c`
 - `stm32_hal/examples/stm32_button_hal.c`
 - `stm32_hal/examples/stm32_buzzer_hal.c`
+
+## Parameter tuning UI
+
+### Portable modules
+
+- `contest_menu`
+- `contest_value_tuner`
+- `contest_button`
+
+### STM32 HAL modules
+
+- `contest_hal_button`
+
+### Example entry points
+
+- `examples/value_tuner_demo.c`
+- `stm32_hal/examples/stm32_param_menu_hal.c`
 
 ## IMU posture or balancing-car starter
 
@@ -178,3 +212,18 @@ This page tells you which modules to copy first for common contest-style project
 ### Example entry point
 
 - `examples/ultrasonic_demo.c`
+
+## Status LED feedback
+
+### Portable modules
+
+- `contest_led_pattern`
+
+### STM32 HAL modules
+
+- `contest_hal_status_led`
+
+### Example entry points
+
+- `examples/led_pattern_demo.c`
+- `stm32_hal/examples/stm32_status_led_hal.c`

@@ -21,7 +21,7 @@ Keeping them separate helps a lot in competitions because you can copy only the 
 ## Recommended project split
 
 - `generic_c`: math, filtering, protocols, control
-- `stm32_hal`: ADC, PWM, UART, encoder timers, buttons, buzzer, servo, GPIO wrappers
+- `stm32_hal`: ADC, PWM, UART, encoder timers, buttons, buzzer, status LED, servo, GPIO wrappers
 - `application`: your actual contest logic
 
 ## Typical flow
@@ -60,6 +60,12 @@ Keeping them separate helps a lot in competitions because you can copy only the 
 2. generic servo map converts desired angle into compare value
 3. HAL GPIO buzzer wrapper plays timed success or warning patterns
 
+### Differential-drive and status control
+
+1. generic diff-drive mixer converts forward plus turn commands into left and right outputs
+2. HAL motor wrappers apply the final signed PWM commands
+3. HAL status LED wrapper exposes simple ready or warning blink patterns
+
 ### OLED menu and command control
 
 1. HAL buttons generate clean click events
@@ -83,6 +89,7 @@ Keeping them separate helps a lot in competitions because you can copy only the 
 - button active level and pull-up or pull-down wiring
 - servo timer period and compare range
 - buzzer wiring polarity and whether it is active or passive
+- status LED active level and pin mapping
 - OLED driver implementation and font tables
 - ultrasonic trigger and echo capture implementation
 - IMU register driver and calibration

@@ -14,3 +14,6 @@ These examples are intentionally incomplete at the hardware layer. They show how
 - `menu_oled_demo.c`: generic menu state for a small OLED UI
 - `ultrasonic_demo.c`: HC-SR04 style echo-time to distance conversion with filtering
 - `balance_car_demo.c`: balance-car style angle fusion plus speed and angle loop skeleton
+- `diff_drive_demo.c`: forward plus turn mixed into left and right wheel outputs
+- `value_tuner_demo.c`: bounded coarse or fine parameter tuning helper
+- `led_pattern_demo.c`: reusable status LED blink pattern state logic

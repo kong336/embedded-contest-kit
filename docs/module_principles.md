@@ -70,6 +70,18 @@ Use the gyro for fast short-term change and the accelerometer for slow long-term
 - tilt estimation
 - IMU-based posture correction
 
+## contest_value_tuner
+
+### Principle
+
+Keep parameter bounds, default value, and fine or coarse adjustment step sizes together so menu tuning code stays simple.
+
+### When to use
+
+- PID parameter tuning
+- speed target setup
+- servo angle limit adjustment
+
 ## contest_median_filter
 
 ### Principle
@@ -118,6 +130,18 @@ Model buzzer feedback as a timed on/off sequence so your application logic only 
 - error warning
 - mode-change feedback
 
+## contest_led_pattern
+
+### Principle
+
+Run repeatable blink timing in software so status LEDs can express ready, warning, save-success, or fault states without blocking delays.
+
+### When to use
+
+- startup ready indicator
+- warning or fault indicator
+- save-success or mode-change feedback
+
 ## contest_menu
 
 ### Principle
@@ -141,6 +165,18 @@ Do not jump to a target immediately. Move toward it with a limited step size.
 - motor setpoint smoothing
 - servo target smoothing
 - speed changes after state transitions
+
+## contest_diff_drive
+
+### Principle
+
+Mix one forward command and one turn command into left and right wheel outputs, then scale both together if the pair would exceed the motor limit.
+
+### When to use
+
+- two-wheel car steering
+- line-following cars
+- joystick or remote-control drive
 
 ## contest_ring_buffer
 

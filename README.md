@@ -33,10 +33,12 @@ This repository is meant for the very common situation of:
 - `contest_moving_average`
 - `contest_low_pass`
 - `contest_complementary_angle`
+- `contest_value_tuner`
 - `contest_ramp`
 
 ### Sensors and motion
 
+- `contest_diff_drive`
 - `contest_encoder`
 - `contest_line_sensor`
 - `contest_servo_map`
@@ -47,6 +49,7 @@ This repository is meant for the very common situation of:
 - `contest_button`
 - `contest_debounce`
 - `contest_buzzer_pattern`
+- `contest_led_pattern`
 - `contest_menu`
 - `contest_state_machine`
 - `contest_periodic_task`
@@ -67,7 +70,9 @@ This repository is meant for the very common situation of:
 - `contest_hal_button`
 - `contest_hal_encoder_timer`
 - `contest_hal_buzzer`
+- `contest_hal_diff_drive`
 - `contest_hal_servo`
+- `contest_hal_status_led`
 
 ## Good first copy sets
 
@@ -77,8 +82,11 @@ This repository is meant for the very common situation of:
 - Servo scan: `contest_servo_map`, `contest_ramp`, `contest_hal_servo`
 - UART command channel: `contest_ring_buffer`, `contest_packet`, `contest_crc16`, `contest_hal_uart_packet`
 - OLED menu: `contest_menu`, `contest_button`, `contest_hal_button`
+- Differential-drive car: `contest_diff_drive`, `contest_hal_diff_drive`, `contest_hal_motor`
 - Ultrasonic obstacle ranging: `contest_ultrasonic`, `contest_low_pass`
 - Balance car starter: `contest_complementary_angle`, `contest_pid`, `contest_incremental_pi`, `contest_periodic_task`
+- Parameter tuning page: `contest_menu`, `contest_value_tuner`, `contest_hal_button`
+- Status LED feedback: `contest_led_pattern`, `contest_hal_status_led`
 
 More recipe-style module bundles are listed in [docs/project_recipes.md](docs/project_recipes.md).
 
@@ -107,6 +115,8 @@ Toolchain notes are in [docs/compiler_notes.md](docs/compiler_notes.md).
 - [docs/module_principles.md](docs/module_principles.md)
 - [docs/project_recipes.md](docs/project_recipes.md)
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
+- [docs/bringup_checklist.md](docs/bringup_checklist.md)
+- [docs/tuning_playbook.md](docs/tuning_playbook.md)
 
 ## Notes for GitHub display
 
