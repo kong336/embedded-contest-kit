@@ -2,6 +2,27 @@
 
 This page tells you which modules to copy first for common contest-style projects.
 
+## Generic contest firmware skeleton
+
+### Start here first
+
+- `docs/contest_fast_start.md`
+- `examples/contest_app_template.c`
+- `stm32_hal/examples/stm32_contest_app_template_hal.c`
+
+### Why this one matters
+
+- it gives you a ready-made stop, run, tune, and fault structure
+- it keeps input, control, telemetry, and status work separated
+- it is the closest thing in this repository to a contest-day base project
+
+### What you still need to fill in
+
+- board pin mapping
+- sensor read path
+- actuator write-back
+- actual topic control law
+
 ## Line-following car
 
 ### Portable modules

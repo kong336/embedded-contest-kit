@@ -10,6 +10,8 @@
 
 A competition-oriented embedded firmware starter pack focused on reusable C modules, STM32 HAL adapters, copy-ready examples, and practical PC-side host tools.
 
+If you want the fastest "contest-day copy path", start with [docs/contest_fast_start.md](docs/contest_fast_start.md) and [examples/contest_app_template.c](examples/contest_app_template.c).
+
 This repository is meant for the very common situation of:
 
 - "I need a clean speed loop base first."
@@ -98,10 +100,11 @@ More recipe-style module bundles are listed in [docs/project_recipes.md](docs/pr
 ## Quick start
 
 1. Generate your base project in STM32CubeMX if you are using STM32.
-2. Copy only the modules you need.
-3. Keep reusable logic in `generic_c/`.
-4. Keep board binding in `stm32_hal/`.
-5. Use `examples/` as structure references, not as drop-in final firmware.
+2. Read [docs/contest_fast_start.md](docs/contest_fast_start.md) to separate reusable parts from must-edit parts.
+3. Copy only the modules you need.
+4. Keep reusable logic in `generic_c/`.
+5. Keep board binding in `stm32_hal/`.
+6. Use `examples/` as structure references, not as drop-in final firmware.
 
 ## Local verification
 
@@ -120,6 +123,7 @@ For PC-side serial tools, see [host_tools/README.md](host_tools/README.md).
 ## Recommended reading
 
 - [docs/module_principles.md](docs/module_principles.md)
+- [docs/contest_fast_start.md](docs/contest_fast_start.md)
 - [docs/project_recipes.md](docs/project_recipes.md)
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
 - [docs/upper_computer_guide.md](docs/upper_computer_guide.md)

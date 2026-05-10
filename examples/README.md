@@ -2,6 +2,7 @@
 
 These examples are intentionally incomplete at the hardware layer. They show how the reusable modules fit together without assuming a specific MCU family.
 
+- `contest_app_template.c`: contest-time application skeleton with 1 ms tick, state machine, status logic, and replaceable hardware hooks
 - `line_following_demo.c`: line-sensor normalization, PID, and ramp-limited motor target flow
 - `uart_packet_demo.c`: ring buffer plus framed packet parsing for UART-style links
 - `speed_loop_demo.c`: encoder speed estimation, low-pass filtering, ramped target, and incremental PI output

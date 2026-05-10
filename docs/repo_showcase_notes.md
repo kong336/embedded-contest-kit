@@ -13,10 +13,10 @@ This page is about presentation rather than firmware logic.
 If someone opens the repository, the strongest things to point them to are:
 
 1. `README.md`
-2. `docs/project_recipes.md`
-3. `examples/speed_loop_demo.c`
-4. `examples/balance_car_demo.c`
-5. `stm32_hal/examples/stm32_line_following_hal.c`
+2. `docs/contest_fast_start.md`
+3. `docs/project_recipes.md`
+4. `examples/contest_app_template.c`
+5. `stm32_hal/examples/stm32_contest_app_template_hal.c`
 
 ## Good future upgrades
 
