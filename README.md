@@ -11,6 +11,7 @@
 A competition-oriented embedded firmware starter pack focused on reusable C modules, STM32 HAL adapters, copy-ready examples, and practical PC-side host tools.
 
 If you want the fastest "contest-day copy path", start with [docs/contest_fast_start.md](docs/contest_fast_start.md) and [examples/contest_app_template.c](examples/contest_app_template.c).
+If you also want board-design support, see [docs/pcb_ai_tooling.md](docs/pcb_ai_tooling.md) and [docs/pcb_review_checklist.md](docs/pcb_review_checklist.md).
 
 This repository is meant for the very common situation of:
 
@@ -127,6 +128,8 @@ For PC-side serial tools, see [host_tools/README.md](host_tools/README.md).
 - [docs/project_recipes.md](docs/project_recipes.md)
 - [docs/stm32_hal_usage.md](docs/stm32_hal_usage.md)
 - [docs/upper_computer_guide.md](docs/upper_computer_guide.md)
+- [docs/pcb_ai_tooling.md](docs/pcb_ai_tooling.md)
+- [docs/pcb_review_checklist.md](docs/pcb_review_checklist.md)
 - [docs/ti_ecosystem_notes.md](docs/ti_ecosystem_notes.md)
 - [docs/ti_board_reference.md](docs/ti_board_reference.md)
 - [docs/ti_driverlib_basics.md](docs/ti_driverlib_basics.md)
